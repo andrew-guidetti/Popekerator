@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!-- Popekerator 9000 sponored by the color lettuce -->
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8">
+<title>Popekerator 9000</title>
+
+<style type="text/css">
+#mainContent {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: xx-large;
+	font-weight: bold;
+	background-color: #E3F0FB;
+	border-radius: 4px;
+	padding: 10px;
+	text-align: center;
+}
+.buttonStyle {
+	border-radius: 4px;
+	border: thin solid #F0E020;
+	padding: 5px;
+	background-color: #F8F094;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	font-weight: bold;
+	color: #663300;
+	width: 150px;
+}
+
+.buttonStyle:hover {
+	border: thin solid #FFCC00;
+	background-color: #FCF9D6;
+	color: #996633;
+	cursor: pointer;
+}
+.buttonStyle:active {
+	border: thin solid #99CC00;
+	background-color: #F5FFD2;
+	color: #669900;
+	cursor: pointer;
+}
+
+</style>
+</head>
+
+<body>
+<div id="mainContent">
+<p id="helloText">?</p>
+<button id="clickButton" class="buttonStyle">Create a Popek</button>
+</div>
+<script> 
+var myButton = document.getElementById("clickButton");
+var myText = document.getElementById("helloText");
+
+myButton.addEventListener('click', doSomething, false);
+
+function doSomething() {
+	myText.textContent = "hello, world!";
+	
+	var PATwords = ["Pat","Pot","Poot","Pro","Pom","Pop","Porta","Pop","Pho","Pam","Patty","Patak","Pad"];
+	var RICKwords = ["rick","rock","ronk","rook","rank","root","rock","pick","stick","rickly"];
+	var POwords = ["Po","Pro","Lo","Sno","Poo","No","Pee","Jingle","Jangle","Pie","Toe"];
+	var PEKwords = ["pek","pok","pook","prok","pram","deck","fleck","check","chop","tech","gasm"];
+	
+	var FirstnamePrefix = PATwords[Math.floor(Math.random()*PATwords.length)];
+	var FirstnameSuffix = RICKwords[Math.floor(Math.random()*RICKwords.length)];
+	var LastnamePrefix = POwords[Math.floor(Math.random()*POwords.length)];
+	var LastnameSuffix = PEKwords[Math.floor(Math.random()*PEKwords.length)];
+	
+	var name ="";
+	name = FirstnamePrefix+FirstnameSuffix+" "+LastnamePrefix+LastnameSuffix;
+	
+	myText.textContent= name;
+
+	
+}
+</script>
+
+</body>
+</html>
